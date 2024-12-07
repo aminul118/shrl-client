@@ -1,7 +1,15 @@
-import { Link, NavLink } from "react-router";
+import { Link, NavLink } from "react-router"; // Make sure to import from 'react-router-dom'
 import logo from "../../assets/logos/logo.png";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 const Navbar = () => {
+  const { user, handleSignOut, darkMode, handleDarkModeToggle } =
+    useContext(AuthContext);
+
+  //! User Links
+
   const navLinks = (
     <>
       <li>
@@ -13,17 +21,46 @@ const Navbar = () => {
       <li>
         <NavLink to={`/team`}>Team</NavLink>
       </li>
+      {/* Drop Down Menu */}
       <li>
-        <NavLink to={`/events`}>Events</NavLink>
+        <details>
+          <summary>Events</summary>
+          <ul className="p-2">
+            <li>
+              <NavLink to={`/upcoming-events`}>Upcoming</NavLink>
+            </li>
+
+            <li>
+              <NavLink to={`/events`}>Events</NavLink>
+            </li>
+          </ul>
+        </details>
       </li>
       <li>
-        <NavLink to={`/events`}>Career</NavLink>
+        <NavLink to={`/contact`}>Contact</NavLink>
       </li>
     </>
   );
+
+  //! Admin Links
+
+  const adminLinks = (
+    <>
+      <li>
+        <NavLink to={`/add-upcoming-events`}>Add Upcoming Event</NavLink>
+      </li>
+
+      <li>
+        <button onClick={handleSignOut} className="btn btn-warning">
+          Sign Out
+        </button>
+      </li>
+    </>
+  );
+
   return (
     <header className="sticky top-0 z-50 bg-base-100">
-      <div className="navbar container mx-auto ">
+      <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,14 +87,44 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to={`/`} className="w-16">
-            <img src={logo} alt="" />
+            <img src={logo} alt="Company Logo" />
           </Link>
         </div>
+
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
+
         <div className="navbar-end">
-          <Link className="btn btn-warning">Contact</Link>
+          <button onClick={handleDarkModeToggle} className="text-xl mr-3">
+            {darkMode ? <MdDarkMode /> : <MdOutlineLightMode />}
+          </button>
+          {user ? (
+            <div className="dropdown dropdown-end">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar"
+              >
+                <div className="w-10 rounded-full">
+                  <img
+                    alt="User Avatar"
+                    src="https://i.ibb.co.com/pdvkBZp/fatema-cv-photo.png"
+                  />
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow space-y-3"
+              >
+                {adminLinks}
+              </ul>
+            </div>
+          ) : (
+            <NavLink to={`/login`} className="btn btn-warning">
+              Login
+            </NavLink>
+          )}
         </div>
       </div>
     </header>

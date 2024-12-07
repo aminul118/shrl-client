@@ -4,7 +4,7 @@ import HeadingAndTittle from "../../components/TextFormat/HeadingAndTittle";
 
 const Services = () => {
   return (
-    <div>
+    <div >
       <Helmet>
         <title>Services || SHRL</title>
       </Helmet>

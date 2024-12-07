@@ -1,6 +1,6 @@
 
 
-const KeyServices = () => {
+const Contact = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const KeyServices = () => {
     );
 };
 
-export default KeyServices;
+export default Contact;

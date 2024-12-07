@@ -16,6 +16,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
+  // console.log(user);
 
   const handleDarkModeToggle = () => {
     setDarkMode(!darkMode);

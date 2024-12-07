@@ -95,20 +95,20 @@ const Login = () => {
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
         </div>
-        <div className="divider">or</div>
+        {/* <div className="divider">or</div>
 
         <button
           onClick={handleGoogleSignIn}
           className="flex items-center justify-center gap-3  btn "
         >
           <FaGoogle /> Login With Google
-        </button>
-        <p className="text-center py-2">
+        </button> */}
+        {/* <p className="text-center py-2">
           You don't have an account? Please
           <Link to={"/register"} className="ml-2 text-blue-600 hover:underline">
             Register
           </Link>
-        </p>
+        </p> */}
       </form>
       <ScrollRestoration />
     </div>

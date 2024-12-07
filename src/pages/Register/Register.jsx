@@ -49,28 +49,12 @@ const Register = () => {
 
     // If password is invalid, prevent form submission
     if (passwordError) return;
-
-    createUser(email, password)
-      .then((result) => {
-        const user = result.user;
-        toast.success("Create user account successfully");
-        const newUser = { name, email, photo };
-
-        fetch("https://alpha-sports-server.vercel.app/users", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(newUser),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            navigate("/login");
-          });
-      })
-      .catch((error) => {
-        console.error("Error creating user:", error);
-      });
+    createUser(email, password).then((result) => {
+      const user = result.user;
+      if (user) {
+        navigate("/");
+      }
+    });
   };
 
   return (
@@ -140,7 +124,7 @@ const Register = () => {
           {passwordError && (
             <p className="text-red-500 text-sm">{passwordError}</p>
           )}
-          
+
           <button type="button" onClick={handlePasswordToggle}>
             {eye ? (
               <FaEye className="absolute right-3 top-12" />
