@@ -11,9 +11,14 @@ import PrivateRoute from "./PrivateRoute";
 import AddUpcomingEvents from "../pages/AddEvents/AddUpcomingEvents";
 import UpcomingEvents from "../pages/Events/UpcomingEvents";
 import UpdateEvent from "../pages/AddEvents/UpdateEvent";
-import UpdateUpcnoming from "../pages/Admin/UpdateUpcoming";
+
 import Contact from "../pages/Contact/Contact";
 import TeamLayout from "../layouts.jsx/TeamLayout";
+
+import AddScrolling from "../components/TextFormat/AddScrolling";
+import EventsDone from "../pages/Events/EventsDone";
+import AddEvents from "../pages/Events/AddEvents";
+import EventDetails from "../pages/Events/EventDetails";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +29,25 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "events",
+        element: <EventsDone />,
+        loader: () => fetch(`http://localhost:5000/events`),
+      },
+      {
+        path: "/event/:details",
+        element: <EventDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/event/${params.details}`),
+      },
+      {
+        path: "add-events",
+        element: (
+          <PrivateRoute>
+            <AddEvents />
+          </PrivateRoute>
+        ),
       },
       {
         path: "services",
@@ -45,6 +69,11 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "/scrolling-text",
+        element: <AddScrolling />,
+      },
+
       {
         path: "/upcoming-events",
         element: <UpcomingEvents />,

@@ -49,6 +49,12 @@ const Navbar = () => {
       <li>
         <NavLink to={`/add-upcoming-events`}>Add Upcoming Event</NavLink>
       </li>
+      <li>
+        <NavLink to={`/scrolling-text`}>Add Scrolling Text</NavLink>
+      </li>
+      <li>
+        <NavLink to={`/add-events`}>Add Events</NavLink>
+      </li>
 
       <li>
         <button onClick={handleSignOut} className="btn btn-warning">

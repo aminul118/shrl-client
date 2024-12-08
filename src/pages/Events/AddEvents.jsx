@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
+import HeadingAndTittle from "../../components/TextFormat/HeadingAndTittle";
 
-const AddUpcomingEvents = () => {
+const AddEvents = () => {
   const handleAddEvents = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -10,6 +11,7 @@ const AddUpcomingEvents = () => {
     const venue = form.get("venue");
     const facilitators = form.get("facilitators");
     const photo = form.get("photo");
+    const details = form.get("details");
     const newEvent = {
       heading,
       date,
@@ -17,11 +19,11 @@ const AddUpcomingEvents = () => {
       venue,
       facilitators,
       photo,
- 
+      details,
     };
     console.log(newEvent);
 
-    fetch("http://localhost:5000/upcoming-events", {
+    fetch("http://localhost:5000/events", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -43,9 +45,7 @@ const AddUpcomingEvents = () => {
   return (
     <div className="min-h-[calc(100vh-424px)] flex  justify-center items-center">
       <div className="max-w-5xl w-full">
-        <h1 className="text-center text-4xl font-bold py-8">
-          Add Upcoming Events
-        </h1>
+        <HeadingAndTittle heading={`Add Events`} />
         <form
           onSubmit={handleAddEvents}
           className="card-body grid lg:grid-cols-2 items-center "
@@ -112,7 +112,6 @@ const AddUpcomingEvents = () => {
               name="facilitators"
               placeholder="Facilitators"
               className="input input-bordered"
-              required
             />
           </div>
           {/* Photo URL */}
@@ -125,6 +124,20 @@ const AddUpcomingEvents = () => {
               name="photo"
               placeholder="Photo URL"
               className="input input-bordered"
+              required
+            />
+          </div>
+          {/* Details about event */}
+          <div className="form-control col-span-2 ">
+            <label className="label">
+              <span className="label-text">Details about</span>
+            </label>
+            <textarea
+              type="text"
+              name="details"
+              placeholder="Details about events"
+              className="input input-bordered h-64"
+              required
             />
           </div>
 
@@ -137,4 +150,4 @@ const AddUpcomingEvents = () => {
   );
 };
 
-export default AddUpcomingEvents;
+export default AddEvents;
