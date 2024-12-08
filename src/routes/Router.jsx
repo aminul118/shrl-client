@@ -19,6 +19,7 @@ import AddScrolling from "../components/TextFormat/AddScrolling";
 import EventsDone from "../pages/Events/EventsDone";
 import AddEvents from "../pages/Events/AddEvents";
 import EventDetails from "../pages/Events/EventDetails";
+import MemberDetails from "../pages/Team/MemberDetails";
 
 const router = createBrowserRouter([
   {
@@ -92,6 +93,12 @@ const router = createBrowserRouter([
       {
         path: "/team",
         element: <TeamLayout />,
+      },
+      {
+        path: "/member/:id",
+        element: <MemberDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/member/${params.id}`),
       },
     ],
   },

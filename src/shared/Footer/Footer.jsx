@@ -16,7 +16,7 @@ const Footer = () => {
     </>
   );
   return (
-    <div className="bg-base-200 mt-6  lg:mt-20">
+    <div className="bg-base-200  ">
       <footer className="py-8 container mx-auto ">
         <div className="footer  text-base-content p-10 flex  justify-between">
           <nav className="text-base">{footerLinks}</nav>
