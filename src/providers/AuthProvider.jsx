@@ -15,11 +15,18 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [darkMode, setDarkMode] = useState(false);
-  // console.log(user);
 
+  // Initialize darkMode state from localStorage or default to false
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    return savedMode === "true"; 
+  });
+
+  // Toggle dark mode and update localStorage
   const handleDarkModeToggle = () => {
-    setDarkMode(!darkMode);
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    localStorage.setItem("darkMode", newMode);
   };
 
   // Create a new user

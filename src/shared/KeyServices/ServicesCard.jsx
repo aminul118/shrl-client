@@ -1,10 +1,18 @@
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+
 const ServicesCard = ({ service }) => {
-//   console.log(service);
+  //   console.log(service);
   const { photo, service_name, description, features_name, features } = service;
+  const { darkMode } = useContext(AuthContext);
   return (
     <div data-aos="fade-up">
       <p>{service.length}</p>
-      <div className=" bg-gradient-to-b from-cyan-50 to-blue-200 rounded-xl p-8 space-y-3 shadow-xl h-full">
+      <div
+        className={`${
+          !darkMode && "from-cyan-50 to-blue-200"
+        }  bg-gradient-to-b  rounded-xl p-8 space-y-3 shadow-xl h-full`}
+      >
         <img className="w-12" src={photo} alt={service_name} />
         <h3 className="text-xl font-semibold">{service_name}</h3>
         <p>{description}</p>

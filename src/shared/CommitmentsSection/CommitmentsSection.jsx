@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import HeadingAndTittle from "../../components/TextFormat/HeadingAndTittle";
-import AOS from "aos"; // Import AOS for animations
-import "aos/dist/aos.css"; // Import the AOS CSS
+
+import { AuthContext } from "../../providers/AuthProvider";
 
 const CommitmentsSection = () => {
+  const { darkMode } = useContext(AuthContext);
   const commitments = [
     {
       title: "Specialized Focus on Women and Children",
@@ -61,13 +62,6 @@ const CommitmentsSection = () => {
     },
   ];
 
-  // Initialize AOS on component mount
-  useEffect(() => {
-    AOS.init({
-      once: true, // Animation happens once
-    });
-  }, []);
-
   return (
     <section className="px-4 md:w-11/12 xl:w-8/12 mx-auto mt-4 md:mt-8 xl:mt-24 lg:mb-24">
       <div className="mt-8 lg:mt-24">
@@ -83,7 +77,9 @@ const CommitmentsSection = () => {
         {commitments.map((commitment, index) => (
           <div
             key={index}
-            className="flex gap-4 items-center bg-green-200 p-4 rounded-3xl shadow-lg"
+            className={`${
+              !darkMode && "bg-green-200"
+            } flex gap-4 items-center  p-4 rounded-3xl shadow-lg`}
             data-aos="fade-up" // AOS fade-up animation
           >
             <div className="flex flex-col items-center justify-center md:flex-row gap-4">

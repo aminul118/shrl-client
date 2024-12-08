@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import HeadingAndTittle from "../../components/TextFormat/HeadingAndTittle";
 import ServicesCard from "./ServicesCard";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const KeyServices = () => {
+  const { darkMode } = useContext(AuthContext);
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -26,7 +28,7 @@ const KeyServices = () => {
   }, []);
 
   return (
-    <section className="bg-combined-bg py-8   ">
+    <section className={`${!darkMode && "bg-combined-bg"} py-8 `}>
       <div className="container mx-auto">
         <div>
           <HeadingAndTittle

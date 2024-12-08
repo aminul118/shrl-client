@@ -1,11 +1,18 @@
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const TeamCard = ({ team }) => {
+    const { darkMode } = useContext(AuthContext);
 //   console.log(team);
   const { photo,name,position, about_shrl } = team;
   return (
     <div data-aos="fade-up">
-      <div className="bg-gradient-to-b from-cyan-50 to-blue-200 shadow-lg rounded-xl px-3 py-6 lg:p-6  relative flex items-center w-full h-full">
+      <div
+        className={`${
+          !darkMode && "from-cyan-50 to-blue-200"
+        } bg-gradient-to-b  shadow-lg rounded-xl px-3 py-6 lg:p-6  relative flex items-center w-full h-full`}
+      >
         <div className="absolute -top-14 -left-1">
           <img
             className="rounded-full border-4 border-[#808BAF] w-28 bg-slate-100 "
