@@ -43,7 +43,10 @@ const AddEvents = () => {
       });
   };
   return (
-    <div className="min-h-[calc(100vh-424px)] flex  justify-center items-center">
+    <div
+      className="min-h-[calc(100vh-424px)] flex  justify-center items-center"
+      data-aos="fade-up"
+    >
       <div className="max-w-5xl w-full">
         <HeadingAndTittle
           heading={`Add Events`}
