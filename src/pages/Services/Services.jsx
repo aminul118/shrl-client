@@ -5,7 +5,7 @@ import CommitmentsSection from "../../shared/CommitmentsSection/CommitmentsSecti
 
 const Services = () => {
   return (
-    <div>
+    <div className="space-y-8 mb-8 2xl:mb-16">
       <Helmet>
         <title>Services || SHRL</title>
       </Helmet>

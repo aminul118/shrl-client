@@ -3,6 +3,7 @@ import HeadingAndTittle from "../../components/TextFormat/HeadingAndTittle";
 import ContactForm from "./ContactForm";
 import { AuthContext } from "../../providers/AuthProvider";
 
+
 const Contact = () => {
   const { darkMode } = useContext(AuthContext);
 
@@ -22,6 +23,7 @@ const Contact = () => {
           <ContactForm />
         </div>
       </div>
+     
     </div>
   );
 };

@@ -63,14 +63,12 @@ const CommitmentsSection = () => {
   ];
 
   return (
-    <section className="px-4 md:w-11/12 xl:w-8/12 mx-auto mt-4 md:mt-8 xl:mt-24 lg:mb-24">
-      <div className="mt-8 lg:mt-24">
-        <div className="space-y-2 flex flex-col items-center justify-center text-center xl:w-8/12 mx-auto mb-4 md:mb-8">
-          <HeadingAndTittle
-            heading={`Our Commitments`}
-            tittle={`At Smart Healthcare and Research Ltd., we are not just healthcare providers—we are your dedicated partners in maternal and child health. Our focus on excellence, innovation, and compassion sets us apart in the healthcare sector. Here’s why you should trust us with your healthcare needs:`}
-          />
-        </div>
+    <section className=" container mx-auto ">
+      <div className="space-y-2 flex flex-col items-center justify-center text-center xl:w-8/12 mx-auto mb-4 md:mb-8">
+        <HeadingAndTittle
+          heading={`Our Commitments`}
+          tittle={`At Smart Healthcare and Research Ltd., we are not just healthcare providers—we are your dedicated partners in maternal and child health. Our focus on excellence, innovation, and compassion sets us apart in the healthcare sector. Here’s why you should trust us with your healthcare needs:`}
+        />
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-2 items-center justify-center gap-8">

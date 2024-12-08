@@ -7,7 +7,7 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
-import { toast } from "react-toastify"; // Ensure to import toast for notifications
+import { toast } from "react-toastify";
 import auth from "../Firebase/firebase.config";
 
 export const AuthContext = createContext(null);

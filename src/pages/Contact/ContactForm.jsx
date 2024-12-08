@@ -56,7 +56,7 @@ const ContactForm = () => {
     <div>
       <form
         onSubmit={handleEmail}
-        className="grid grid-cols-2 gap-4 px-6 py-3 max-w-3xl w-full mx-auto"
+        className="grid md:grid-cols-2 gap-4 px-6 py-3 max-w-3xl w-full mx-auto"
       >
         <input
           type="text"
@@ -85,9 +85,9 @@ const ContactForm = () => {
         <textarea
           name="message"
           placeholder="Message *"
-          className="px-6 py-3 rounded-lg w-full h-48 col-span-2 resize-none"
+          className="px-6 py-3 rounded-lg w-full h-48 md:col-span-2 resize-none"
         />
-        <button type="submit" className="btn btn-warning col-span-2">
+        <button type="submit" className="btn btn-warning md:col-span-2">
           Send Mail
         </button>
       </form>

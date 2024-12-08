@@ -45,7 +45,10 @@ const AddEvents = () => {
   return (
     <div className="min-h-[calc(100vh-424px)] flex  justify-center items-center">
       <div className="max-w-5xl w-full">
-        <HeadingAndTittle heading={`Add Events`} />
+        <HeadingAndTittle
+          heading={`Add Events`}
+          tittle={`Which event is already done`}
+        />
         <form
           onSubmit={handleAddEvents}
           className="card-body grid lg:grid-cols-2 items-center "

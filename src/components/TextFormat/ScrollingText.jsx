@@ -51,23 +51,26 @@ const ScrollingText = () => {
   return (
     <div>
       {scrolls?.map((scroll) => (
-        <div className="bg-slate-200 p-2" key={scroll._id}>
-          <Marquee>{scroll?.text}</Marquee>
-          {user && (
-            <div className="flex gap-2">
-              <Link to={`/scrolling/${scroll._id}`} className="btn btn-primary">
-                Update
-              </Link>
-              <button
-                onClick={() => {
-                  handleDelete(scroll._id);
-                }}
-                className="btn btn-warning"
-              >
-                Delete
-              </button>
-            </div>
-          )}
+        <div
+          className="bg-slate-200 p-2 rounded-lg container mx-auto text-black"
+          key={scroll._id}
+        >
+          <div className="flex items-center">
+            <button className="btn btn-warning">Latest</button>
+            <Marquee>{scroll?.text}</Marquee>
+            {user && (
+              <div className="flex gap-2">
+                <button
+                  onClick={() => {
+                    handleDelete(scroll._id);
+                  }}
+                  className="btn btn-warning"
+                >
+                  Delete
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       ))}
     </div>

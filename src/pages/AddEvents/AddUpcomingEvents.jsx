@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import HeadingAndTittle from "../../components/TextFormat/HeadingAndTittle";
 
 const AddUpcomingEvents = () => {
   const handleAddEvents = (e) => {
@@ -43,9 +44,7 @@ const AddUpcomingEvents = () => {
   return (
     <div className="min-h-[calc(100vh-424px)] flex  justify-center items-center">
       <div className="max-w-5xl w-full">
-        <h1 className="text-center text-4xl font-bold py-8">
-          Add Upcoming Events
-        </h1>
+        <HeadingAndTittle heading={`Add Upcoming Events`} />
         <form
           onSubmit={handleAddEvents}
           className="card-body grid lg:grid-cols-2 items-center "
