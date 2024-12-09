@@ -11,7 +11,7 @@ const Contact = () => {
     <div
       className={`${
         !darkMode ? "bg-contact-bg bg-no-repeat" : ""
-      } bg-cover min-h-[calc(100vh-400px)]`}
+      } bg-cover min-h-[calc(100vh-464px)]`}
       data-aos="fade-up"
     >
       <div className="flex flex-col items-center justify-center h-full">

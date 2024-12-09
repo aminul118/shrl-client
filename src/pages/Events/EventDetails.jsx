@@ -7,8 +7,8 @@ const EventDetails = () => {
   const { heading, date, time, venue, facilitators, photo, details } = event;
 
   return (
-    <div>
-      <div className="card card-compact bg-base-100 w-full shadow-xl">
+    <div className="w-full max-w-2xl mx-auto">
+      <div className="card card-compact bg-base-100 w-full ">
         <figure>
           <img
             className="w-full"

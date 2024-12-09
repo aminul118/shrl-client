@@ -27,16 +27,26 @@ const Footer = () => {
           <nav className="text-base w-full sm:w-auto">{footerLinks}</nav>
 
           <nav className="w-full sm:w-auto  sm:justify-start">
-            <img className="w-36 h-36 object-cover" src={darkMode ? logo : logo2} alt="Logo" />
+            <img
+              className="w-36 h-36 object-cover"
+              src={darkMode ? logo : logo2}
+              alt="Logo"
+            />
           </nav>
 
           <nav className="w-full sm:w-auto">
             <h6 className="footer-title text-lg mb-4">Contact</h6>
             <div className="text-base">
-              <p className="flex gap-2">
-                <FaLocationDot /> 278 West Monipur, <br /> Level-4, 60 Feet
-                Road, <br /> Mirpur-2, Dhaka-1216.
-              </p>
+              <a
+                href="https://www.google.com/maps/dir//smart+healthcare+and+research+limited/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3755c10012ad289d:0x6497707bf07e8dc0?sa=X&ved=1t:3061&ictx=111"
+                target="_blank"
+              >
+                <p className="flex gap-2">
+                  <FaLocationDot /> 278 West Monipur, <br /> Level-4, 60 Feet
+                  Road, <br /> Mirpur-2, Dhaka-1216.
+                </p>
+              </a>
+
               <p className="flex items-center gap-2">
                 <FaPhone /> +880171185594
               </p>

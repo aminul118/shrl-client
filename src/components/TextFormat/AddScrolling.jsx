@@ -26,7 +26,7 @@ const AddScrolling = () => {
   };
   return (
     <div
-      className="flex justify-center items-center min-h-[calc(100vh-424px)] "
+      className="flex justify-center items-center min-h-[calc(100vh-464px)] "
       data-aos="fade-up"
     >
       <div className="w-full max-w-4xl">

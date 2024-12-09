@@ -1,4 +1,4 @@
-import {  useLoaderData } from "react-router";
+import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
 
 const UpdateEvent = () => {
@@ -47,7 +47,7 @@ const UpdateEvent = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-424px)] flex  justify-center items-center">
+    <div className="min-h-[calc(100vh-464px)] flex  justify-center items-center">
       <div className="max-w-5xl w-full">
         <h1 className="text-4xl font-bold text-center">Update your Event</h1>
 
@@ -138,8 +138,6 @@ const UpdateEvent = () => {
             <button className="btn btn-primary">Update upcoming Events</button>
           </div>
         </form>
-
-      
       </div>
     </div>
   );

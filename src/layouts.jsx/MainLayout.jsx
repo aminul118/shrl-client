@@ -10,18 +10,17 @@ const MainLayout = () => {
   const { darkMode } = useContext(AuthContext);
 
   useEffect(() => {
-    AOS.init({ once: true }); 
+    AOS.init({ once: true });
 
-   
     return () => {
-      AOS.refresh(); 
+      AOS.refresh();
     };
   }, []);
 
   return (
     <div data-theme={darkMode ? "dark" : "light"}>
       <Navbar />
-      <div className="min-h-[calc(100vh-424px)] px-2 lg:px-0 ">
+      <div className="min-h-[calc(100vh-464px)] px-2 lg:px-0 ">
         <Outlet />
       </div>
       <Footer />
