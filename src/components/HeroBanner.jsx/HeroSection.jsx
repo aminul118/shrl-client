@@ -10,7 +10,7 @@ const HeroSection = () => {
         <div className="mx-auto px-4 md:px-0 md:w-9/12 space-y-8 md:space-y-12">
           <h1></h1>
           <h1 className="font-bold text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl">
-            <span className="text-[#626c8e] font-tangerine md:text-8xl">
+            <span className="text-[#626c8e] font-tangerine text-5xl md:text-8xl">
               <Typewriter
                 words={["Welcome to"]}
                 loop

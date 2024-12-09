@@ -63,7 +63,7 @@ const CommitmentsSection = () => {
   ];
 
   return (
-    <section className=" container mx-auto ">
+    <section className=" container mx-auto px-2 lg:px-0">
       <div className="space-y-2 flex flex-col items-center justify-center text-center xl:w-8/12 mx-auto mb-4 md:mb-8">
         <HeadingAndTittle
           heading={`Our Commitments`}

@@ -19,7 +19,7 @@ const TeamMembers = () => {
   }, []);
 
   return (
-    <div className="container mx-auto mb-12 lg:mb-14">
+    <div className="container mx-auto mb-12 lg:mb-14 px-2 lg:px-0">
       {isLoading ? (
         <div className="flex justify-center items-center mt-12">
           {/* Loader (Can replace with a spinner component or custom loader) */}

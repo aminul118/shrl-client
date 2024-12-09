@@ -22,7 +22,7 @@ const FoundingTeam = () => {
   }, []);
 
   return (
-    <section>
+    <section className="px-2 lg:px-0">
       <div>
         <HeadingAndTittle
           heading="Founding Team"

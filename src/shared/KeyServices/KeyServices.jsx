@@ -28,7 +28,7 @@ const KeyServices = () => {
   }, []);
 
   return (
-    <section className={`${!darkMode && "bg-combined-bg"} py-8 `}>
+    <section className={`${!darkMode && "bg-combined-bg"} py-8 px-2 lg:px-0`}>
       <div className="container mx-auto">
         <div>
           <HeadingAndTittle
@@ -42,7 +42,7 @@ const KeyServices = () => {
           ) : error ? (
             <p>{error}</p>
           ) : (
-            <div className="grid gap-4 lg:grid-cols-2 2xl:grid-cols-3 lg:gap-6">
+            <div className="grid gap-4 lg:grid-cols-2 2xl:grid-cols-3 lg:gap-6 mt-4">
               {services.map((service, i) => (
                 <ServicesCard key={i} service={service} />
               ))}

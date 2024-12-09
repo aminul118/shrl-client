@@ -12,7 +12,7 @@ const Faq = () => {
   };
 
   return (
-    <section className="container mx-auto" >
+    <section className="container mx-auto px-2 lg:px-0" >
     
         <div>
          <HeadingAndTittle heading={`FAQ Section`}/>
@@ -31,7 +31,7 @@ const Faq = () => {
           {/* Right */}
           <div>
             {/* 1st */}
-            <div className="mt-8">
+            <div className="mt-8 ">
               <div
                 className="text-xl font-medium cursor-pointer flex items-center"
                 onClick={() => toggleAccordion(0)}

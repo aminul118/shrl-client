@@ -43,7 +43,7 @@ const UpcomingEvents = () => {
           <div className="w-16 h-16 border-8 border-dashed border-primary rounded-full animate-spin"></div>
         </div>
       ) : (
-        <div className="grid gap-4 py-8 items-center justify-center">
+        <div className="grid gap-4 py-8 items-center justify-center px-2 lg:px-0">
           {upcomingEvents.map((event) => (
             <EventCard
               key={event._id}

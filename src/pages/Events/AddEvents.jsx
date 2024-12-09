@@ -45,7 +45,7 @@ const AddEvents = () => {
   };
   return (
     <div
-      className="min-h-[calc(100vh-464px)] flex  justify-center items-center"
+      className="min-h-[calc(100vh-464px)] flex  justify-center items-center "
       data-aos="fade-up"
     >
       <div className="max-w-5xl w-full">
