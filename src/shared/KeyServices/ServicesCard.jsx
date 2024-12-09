@@ -10,8 +10,8 @@ const ServicesCard = ({ service }) => {
       <p>{service.length}</p>
       <div
         className={`${
-          !darkMode && "from-cyan-50 to-blue-200"
-        }  bg-gradient-to-b  rounded-xl p-8 space-y-3 shadow-xl h-full`}
+          !darkMode && "bg-gradient-to-b"
+        }   from-cyan-50 to-blue-200  rounded-xl p-8 space-y-3 shadow-xl h-full bg-slate-800`}
       >
         <img className="w-12" src={photo} alt={service_name} />
         <h3 className="text-xl font-semibold">{service_name}</h3>

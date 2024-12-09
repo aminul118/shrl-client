@@ -13,15 +13,15 @@ const EventDetails = () => {
           <img
             className="w-full"
             src={photo}
-            alt="Shoes"
+            alt={heading}
           />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{heading}</h2>
           <p ><span className="font-semibold">Date:</span> {date}</p>
-          <p ><span className="font-semibold">time:</span> {time}</p>
-          <p ><span className="font-semibold">venue:</span> {venue}</p>
-          <p ><span className="font-semibold">details:</span> {details}</p>
+          <p ><span className="font-semibold">Time:</span> {time}</p>
+          <p ><span className="font-semibold">Venue:</span> {venue}</p>
+          <p ><span className="font-semibold">Details:</span> {details}</p>
       
 
 

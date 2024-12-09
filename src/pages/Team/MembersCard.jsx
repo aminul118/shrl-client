@@ -1,35 +1,56 @@
+import { useContext } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const MembersCard = ({ member }) => {
-  console.log(member);
+  // console.log(member);
   const { name, designation, short_about, phone, email, photo, _id } = member;
+  const {darkMode}= useContext(AuthContext)
 
   return (
-    <div data-aos="fade-up">
-      <div className="bg-gradient-to-b from-cyan-50 to-blue-200 shadow-lg rounded-xl px-3 md:py-6 lg:p-6 relative flex items-center mt-6 h-full">
-        <div className="absolute -top-14 -left-2">
+    <div data-aos="fade-up" className="mb-8">
+      <div
+        className={`${
+          !darkMode && "bg-gradient-to-b"
+        } from-cyan-50 to-blue-200 shadow-lg rounded-xl px-3 md:py-6 lg:p-6 relative flex flex-col h-full mt-6 bg-slate-800`}
+      >
+        {/* Photo */}
+        <div className="flex justify-center -mt-16 mb-4">
           <img
-            className="rounded-full object-cover border-2 border-[#808BAF] w-20 bg-slate-100"
+            className={`${darkMode && "bg-slate-800"} rounded-full object-cover border-2 border-[#808BAF] w-24 bg-slate-100`}
             src={photo}
             alt={`${name}'s photo`}
           />
         </div>
-        <div className="mt-12 md:text-justify">
-          <h1 className="text-xl font-bold">{name}</h1>
-          <h1 className="font-semibold">{designation}</h1>
-          <p className="mt-4">
-            {short_about} <br />
-            <br />
-            E-mail: {email} <br />
-            Cell: {phone}
-          </p>
-          <br />
-          <Link
-            to={`/member/${_id}`}
-            className="underline text-blue-600 font-semibold"
-          >
-            Portfolio
-          </Link>
+
+        {/* Text */}
+        <div className="flex flex-col justify-between h-full">
+          <div className="text-center">
+            {/* Name and Designation */}
+            <h1 className="text-xl font-bold">{name}</h1>
+            <h2 className="font-semibold text-lg">{designation}</h2>
+          </div>
+
+          {/* Short About */}
+          <div className="flex-1 mt-4 ">
+            <p>{short_about}</p>
+          </div>
+
+          {/* Contact Info */}
+          <div className="mt-2 ">
+            {email && <p> E-mail: {email}</p>}
+            {phone && <p> Cell: {phone}</p>}
+          </div>
+
+          {/* Portfolio Link */}
+          <div className="mt-4 flex ">
+            <Link
+              to={`/member/${_id}`}
+              className="underline text-blue-600 font-semibold "
+            >
+              Portfolio
+            </Link>
+          </div>
         </div>
       </div>
     </div>

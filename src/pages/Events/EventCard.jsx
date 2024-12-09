@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 const EventCard = ({ event, events, setEvents }) => {
   const { heading, date, time, venue, facilitators, photo, _id } = event;
-  const { user } = useContext(AuthContext);
+  const { user, darkMode } = useContext(AuthContext);
 
   const handleDelete = (id) => {
     fetch(`http://localhost:5000/upcoming-events/${id}`, {
@@ -42,9 +42,13 @@ const EventCard = ({ event, events, setEvents }) => {
 
   return (
     <div>
-      <div className="card bg-base-100 object-cover object-center w-full shadow-xl">
+      <div
+        className={`${
+          darkMode && "bg-slate-800"
+        } card bg-base-100 object-cover object-center w-full shadow-xl`}
+      >
         <figure>
-          <img className="h-64 w-full object-cover" src={photo} alt="Event" />
+          <img className="h-64 w-full object-cover" src={photo} alt={heading} />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{heading}</h2>

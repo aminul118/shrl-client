@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import HeadingAndTittle from "./HeadingAndTittle";
+import { Helmet } from "react-helmet";
 
 const AddScrolling = () => {
   const handleAddText = (e) => {
@@ -55,6 +56,9 @@ const AddScrolling = () => {
           </form>
         </div>
       </div>
+      <Helmet>
+        <title>Add Scrolling text</title>
+      </Helmet>
     </div>
   );
 };

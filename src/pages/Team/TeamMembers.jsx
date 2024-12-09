@@ -10,7 +10,7 @@ const TeamMembers = () => {
   }, []);
   console.log(members);
   return (
-    <div className="grid grid-cols-2 gap-4 container mx-auto">
+    <div className="grid md:grid-cols-2 2xl:grid-cols-3 gap-4 container mx-auto mb-12 lg:mb-14">
       {members?.map((member) => (
         <MembersCard member={member} key={member._id} />
       ))}

@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import HeadingAndTittle from "../../components/TextFormat/HeadingAndTittle";
+import { Helmet } from "react-helmet";
 
 const AddEvents = () => {
   const handleAddEvents = (e) => {
@@ -152,6 +153,9 @@ const AddEvents = () => {
           </div>
         </form>
       </div>
+      <Helmet>
+        <title>Add Events</title>
+      </Helmet>
     </div>
   );
 };

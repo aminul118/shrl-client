@@ -76,8 +76,8 @@ const CommitmentsSection = () => {
           <div
             key={index}
             className={`${
-              !darkMode && "bg-green-200"
-            } flex gap-4 items-center  p-4 rounded-3xl shadow-lg`}
+              darkMode && "bg-slate-800 "
+            } flex gap-4 items-center  p-4 rounded-3xl shadow-lg bg-green-200 `}
             data-aos="fade-up" // AOS fade-up animation
           >
             <div className="flex flex-col items-center justify-center md:flex-row gap-4">

@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import HeadingAndTittle from "../../components/TextFormat/HeadingAndTittle";
+import { Helmet } from "react-helmet";
 
 const AddUpcomingEvents = () => {
   const handleAddEvents = (e) => {
@@ -134,6 +135,9 @@ const AddUpcomingEvents = () => {
           </div>
         </form>
       </div>
+      <Helmet>
+        <title>Add Upcoming Events</title>
+      </Helmet>
     </div>
   );
 };
