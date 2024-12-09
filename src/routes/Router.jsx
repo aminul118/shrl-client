@@ -34,13 +34,13 @@ const router = createBrowserRouter([
       {
         path: "events",
         element: <EventsDone />,
-        loader: () => fetch(`http://localhost:5000/events`),
+        loader: () => fetch(`https://shrl-server.vercel.app/events`),
       },
       {
         path: "/event/:details",
         element: <EventDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/event/${params.details}`),
+          fetch(`https://shrl-server.vercel.app/event/${params.details}`),
       },
       {
         path: "add-events",
@@ -78,13 +78,13 @@ const router = createBrowserRouter([
       {
         path: "/upcoming-events",
         element: <UpcomingEvents />,
-        loader: () => fetch("http://localhost:5000/upcoming-events"),
+        loader: () => fetch("https://shrl-server.vercel.app/upcoming-events"),
       },
       {
         path: "/update-events/:id",
         element: <UpdateEvent />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/upcoming-events/${params.id}`),
+          fetch(`https://shrl-server.vercel.app/upcoming-events/${params.id}`),
       },
       {
         path: "/contact",
@@ -98,7 +98,7 @@ const router = createBrowserRouter([
         path: "/member/:id",
         element: <MemberDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/member/${params.id}`),
+          fetch(`https://shrl-server.vercel.app/member/${params.id}`),
       },
     ],
   },

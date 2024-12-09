@@ -26,7 +26,7 @@ const UpdateEvent = () => {
     };
     console.log(updateEvent);
 
-    fetch(`http://localhost:5000/upcoming-events/${_id}`, {
+    fetch(`https://shrl-server.vercel.app/upcoming-events/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

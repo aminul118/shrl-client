@@ -15,7 +15,7 @@ const EventsDone = () => {
 
   const handleDelete = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/event/${id}`, {
+    fetch(`https://shrl-server.vercel.app/event/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

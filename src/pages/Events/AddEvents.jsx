@@ -24,7 +24,7 @@ const AddEvents = () => {
     };
     console.log(newEvent);
 
-    fetch("http://localhost:5000/events", {
+    fetch("https://shrl-server.vercel.app/events", {
       method: "POST",
       headers: {
         "content-type": "application/json",

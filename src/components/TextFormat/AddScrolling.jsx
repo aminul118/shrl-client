@@ -6,7 +6,7 @@ const AddScrolling = () => {
   const handleAddText = (e) => {
     e.preventDefault();
     const text = e.target.text.value;
-    fetch("http://localhost:5000/scrolling", {
+    fetch("https://shrl-server.vercel.app/scrolling", {
       method: "POST",
       headers: {
         "content-type": "application/json",

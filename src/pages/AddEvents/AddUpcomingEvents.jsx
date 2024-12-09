@@ -22,7 +22,7 @@ const AddUpcomingEvents = () => {
     };
     console.log(newEvent);
 
-    fetch("http://localhost:5000/upcoming-events", {
+    fetch("https://shrl-server.vercel.app/upcoming-events", {
       method: "POST",
       headers: {
         "content-type": "application/json",

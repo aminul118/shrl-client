@@ -10,7 +10,7 @@ const ScrollingText = () => {
 
   useEffect(() => {
     // Fetch scrolling texts from server
-    fetch("http://localhost:5000/scrolling")
+    fetch("https://shrl-server.vercel.app/scrolling")
       .then((res) => res.json())
       .then((data) => {
         setScroll(data);
@@ -22,7 +22,7 @@ const ScrollingText = () => {
 
   const handleDelete = (id) => {
     console.log("Deleting id:", id);
-    fetch(`http://localhost:5000/scrolling/${id}`, {
+    fetch(`https://shrl-server.vercel.app/scrolling/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

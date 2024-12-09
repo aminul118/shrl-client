@@ -4,7 +4,7 @@ import MembersCard from "./MembersCard";
 const TeamMembers = () => {
   const [members, setMembers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/members")
+    fetch("https://shrl-server.vercel.app/members")
       .then((res) => res.json())
       .then((data) => setMembers(data));
   }, []);
@@ -14,7 +14,6 @@ const TeamMembers = () => {
       {members?.map((member) => (
         <MembersCard member={member} key={member._id} />
       ))}
-    
     </div>
   );
 };

@@ -8,7 +8,7 @@ const EventCard = ({ event, events, setEvents }) => {
   const { user, darkMode } = useContext(AuthContext);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/upcoming-events/${id}`, {
+    fetch(`https://shrl-server.vercel.app/upcoming-events/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
