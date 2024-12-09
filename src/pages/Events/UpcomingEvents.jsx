@@ -1,17 +1,21 @@
+import { useState, useEffect } from "react";
 import { useLoaderData } from "react-router";
 import EventCard from "./EventCard";
 
-import Marquee from "react-fast-marquee";
 import ScrollingText from "../../components/TextFormat/ScrollingText";
 import { Typewriter } from "react-simple-typewriter";
 
 const UpcomingEvents = () => {
-  const upcomingEvents = useLoaderData();
+  // State to manage events
+  const [upcomingEvents, setUpcomingEvents] = useState([]);
 
+  // Fetch the data initially
+  const loaderData = useLoaderData();
 
- 
-
-
+  // Set the initial events on load
+  useEffect(() => {
+    setUpcomingEvents(loaderData);
+  }, [loaderData]);
 
   return (
     <div>
@@ -31,7 +35,12 @@ const UpcomingEvents = () => {
 
       <div className="grid gap-4 py-8 items-center justify-center">
         {upcomingEvents.map((event) => (
-          <EventCard event={event} key={event._id} />
+          <EventCard
+            key={event._id}
+            event={event}
+            events={upcomingEvents}
+            setEvents={setUpcomingEvents} // Pass down setEvents to EventCard
+          />
         ))}
       </div>
     </div>
