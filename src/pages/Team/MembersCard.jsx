@@ -8,11 +8,11 @@ const MembersCard = ({ member }) => {
   const {darkMode}= useContext(AuthContext)
 
   return (
-    <div data-aos="fade-up" className="mb-8">
+    <div data-aos="fade-up" className="mb-8 mt-8 md:mt-0 ">
       <div
         className={`${
           !darkMode && "bg-gradient-to-b"
-        } from-cyan-50 to-blue-200 shadow-lg rounded-xl px-3 md:py-6 lg:p-6 relative flex flex-col h-full mt-6 bg-slate-800`}
+        } from-cyan-50 to-blue-200 shadow-lg rounded-xl p-3 md:py-6 lg:p-6 relative flex flex-col h-full mt-6 bg-slate-800`}
       >
         {/* Photo */}
         <div className="flex justify-center -mt-16 mb-4">

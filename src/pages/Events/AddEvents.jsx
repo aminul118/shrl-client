@@ -135,7 +135,7 @@ const AddEvents = () => {
             />
           </div>
           {/* Details about event */}
-          <div className="form-control col-span-2 ">
+          <div className="form-control md:col-span-2 ">
             <label className="label">
               <span className="label-text">Details about</span>
             </label>
@@ -148,7 +148,7 @@ const AddEvents = () => {
             />
           </div>
 
-          <div className="form-control mt-6 col-span-2">
+          <div className="form-control mt-6 md:col-span-2">
             <button className="btn btn-primary">Add Events</button>
           </div>
         </form>

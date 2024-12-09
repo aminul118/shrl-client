@@ -4,7 +4,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const MemberDetails = () => {
   const details = useLoaderData();
-  const {darkMode}= useContext(AuthContext)
+  const { darkMode } = useContext(AuthContext);
   console.log(details);
   const {
     name,
@@ -92,7 +92,7 @@ const MemberDetails = () => {
       <div
         className={`${
           darkMode && "bg-slate-800 border-none shadow-none"
-        } mt-12 md:border shadow-2xl shadow-slate-600 rounded-lg px-8 md:p-12 md:mt-4 lg:mt-8 mx-auto lg:w-9/12 bg-white pb-10 `}
+        } mt-12 md:border shadow-2xl shadow-slate-600 rounded-lg px-8 md:p-12 md:mt-4 mx-auto lg:w-9/12  pb-10`}
         data-aos="fade-right"
       >
         {/* Heading 1 - Work 1 starts */}

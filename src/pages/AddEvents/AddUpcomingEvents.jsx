@@ -130,7 +130,7 @@ const AddUpcomingEvents = () => {
             />
           </div>
 
-          <div className="form-control mt-6 col-span-2">
+          <div className="form-control mt-6 md:col-span-2">
             <button className="btn btn-primary">Add upcoming Events</button>
           </div>
         </form>
