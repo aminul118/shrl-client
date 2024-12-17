@@ -45,27 +45,39 @@ const EventCard = ({ event, events, setEvents }) => {
       <div
         className={`${
           darkMode && "bg-slate-800"
-        } card bg-base-100 object-cover object-center w-full shadow-xl`}
+        } card bg-base-100 object-cover object-center w-full border p-4`}
       >
         <figure>
-          <img className="h-64 w-full object-cover" src={photo} alt={heading} />
+          <img
+            className=" rounded-lg  h-[600px] object-cover"
+            src={photo}
+            alt={heading}
+          />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{heading}</h2>
-          <p>
-            <span className="font-semibold">Facilitator:</span> {facilitators}
-          </p>
-          <p>
-            <span className="font-semibold">Date: </span>
-            {date}
-          </p>
-          <p>
-            <span className="font-semibold">Time: </span>
-            {time}
-          </p>
-          <p>
-            <span className="font-semibold">Venue:</span> {venue}
-          </p>
+          {facilitators && (
+            <p>
+              <span className="font-semibold">Facilitator:</span> {facilitators}
+            </p>
+          )}
+          {date && (
+            <p>
+              <span className="font-semibold">Date: </span>
+              {date}
+            </p>
+          )}
+          {time && (
+            <p>
+              <span className="font-semibold">Time: </span>
+              {time}
+            </p>
+          )}
+          {venue && (
+            <p>
+              <span className="font-semibold">Venue:</span> {venue}
+            </p>
+          )}
         </div>
         {user && (
           <div className="p-6">

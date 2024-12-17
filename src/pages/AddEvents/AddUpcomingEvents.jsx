@@ -46,7 +46,7 @@ const AddUpcomingEvents = () => {
       className="min-h-[calc(100vh-464px)] flex  justify-center items-center"
       data-aos="fade-up"
     >
-      <div className="max-w-5xl w-full">
+      <div className="max-w-5xl w-full ">
         <HeadingAndTittle heading={`Add Upcoming Events`} />
         <form
           onSubmit={handleAddEvents}
@@ -62,7 +62,6 @@ const AddUpcomingEvents = () => {
               name="heading"
               placeholder="Events Heading"
               className="input input-bordered"
-              required
             />
           </div>
           {/* Event Date */}
@@ -75,7 +74,6 @@ const AddUpcomingEvents = () => {
               name="date"
               placeholder="Events Date"
               className="input input-bordered"
-              required
             />
           </div>
           {/* Event Time */}
@@ -88,7 +86,6 @@ const AddUpcomingEvents = () => {
               name="time"
               placeholder="Events Time"
               className="input input-bordered"
-              required
             />
           </div>
           {/* Venue */}
@@ -101,7 +98,6 @@ const AddUpcomingEvents = () => {
               name="venue"
               placeholder="Venue"
               className="input input-bordered"
-              required
             />
           </div>
           {/* Facilitators */}
@@ -114,7 +110,6 @@ const AddUpcomingEvents = () => {
               name="facilitators"
               placeholder="Facilitators"
               className="input input-bordered"
-              required
             />
           </div>
           {/* Photo URL */}
