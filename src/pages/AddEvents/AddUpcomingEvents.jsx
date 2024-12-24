@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import HeadingAndTittle from "../../components/TextFormat/HeadingAndTittle";
 import { Helmet } from "react-helmet";
+import axios from "axios";
 
 const AddUpcomingEvents = () => {
   const handleAddEvents = (e) => {
@@ -20,19 +21,11 @@ const AddUpcomingEvents = () => {
       facilitators,
       photo,
     };
-    console.log(newEvent);
 
-    fetch("https://shrl-server.vercel.app/upcoming-events", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newEvent),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
+    axios
+      .post(`${import.meta.env.VITE_BASE_URL}/upcoming-events`, newEvent)
+      .then((res) => {
+        if (res.data.insertedId) {
           Swal.fire({
             title: "Good job!",
             text: "New Event added!",

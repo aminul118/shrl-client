@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { Link, useLoaderData } from "react-router";
+import { useLoaderData } from "react-router";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const MemberDetails = () => {
   const details = useLoaderData();
   const { darkMode } = useContext(AuthContext);
-  console.log(details);
+  // console.log(details);
   const {
     name,
     designation,

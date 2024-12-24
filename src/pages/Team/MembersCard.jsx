@@ -5,7 +5,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 const MembersCard = ({ member }) => {
   // console.log(member);
   const { name, designation, short_about, phone, email, photo, _id } = member;
-  const {darkMode}= useContext(AuthContext)
+  const { darkMode } = useContext(AuthContext);
 
   return (
     <div data-aos="fade-up" className="mb-8 mt-8 md:mt-0 ">
@@ -17,7 +17,9 @@ const MembersCard = ({ member }) => {
         {/* Photo */}
         <div className="flex justify-center -mt-16 mb-4">
           <img
-            className={`${darkMode && "bg-slate-800"} rounded-full object-cover border-2 border-[#808BAF] w-24 bg-slate-100`}
+            className={`${
+              darkMode && "bg-slate-800"
+            } rounded-full object-cover border-2 border-[#808BAF] w-24 bg-slate-100`}
             src={photo}
             alt={`${name}'s photo`}
           />

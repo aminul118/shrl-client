@@ -13,16 +13,6 @@ const ContactForm = () => {
     const email = form.get("email");
     const message = form.get("message");
 
-    // Check if all required fields are filled
-    if (!first || !last || !phone || !email || !message) {
-      Swal.fire({
-        title: "Oops!",
-        text: "Please fill out all the fields!",
-        icon: "error",
-      });
-      return;
-    }
-
     // Send email using EmailJS
     emailjs
       .sendForm(
@@ -63,29 +53,34 @@ const ContactForm = () => {
           name="first"
           placeholder="First Name *"
           className="px-6 py-3 rounded-full w-full"
+          required
         />
         <input
           type="text"
           name="last"
           placeholder="Last Name *"
           className="px-6 py-3 rounded-full w-full"
+          required
         />
         <input
           type="tel"
           name="phone"
           placeholder="Phone Number *"
           className="px-6 py-3 rounded-full w-full"
+          required
         />
         <input
           type="email"
           name="email"
           placeholder="Email *"
           className="px-6 py-3 rounded-full w-full"
+          required
         />
         <textarea
           name="message"
           placeholder="Message *"
           className="px-6 py-3 rounded-lg w-full h-48 md:col-span-2 resize-none"
+          required
         />
         <button type="submit" className="btn btn-warning md:col-span-2">
           Send Mail

@@ -1,20 +1,16 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../layouts.jsx/MainLayout";
-
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Login from "../pages/Login/Login";
 // import Register from "../pages/Register/Register";
 import Home from "../pages/Home/Home";
 import Services from "../pages/Services/Services";
-
 import PrivateRoute from "./PrivateRoute";
 import AddUpcomingEvents from "../pages/AddEvents/AddUpcomingEvents";
 import UpcomingEvents from "../pages/Events/UpcomingEvents";
 import UpdateEvent from "../pages/AddEvents/UpdateEvent";
-
 import Contact from "../pages/Contact/Contact";
 import TeamLayout from "../layouts.jsx/TeamLayout";
-
 import AddScrolling from "../components/TextFormat/AddScrolling";
 import EventsDone from "../pages/Events/EventsDone";
 import AddEvents from "../pages/Events/AddEvents";
@@ -34,13 +30,13 @@ const router = createBrowserRouter([
       {
         path: "events",
         element: <EventsDone />,
-        loader: () => fetch(`https://shrl-server.vercel.app/events`),
+        loader: () => fetch(`${import.meta.env.VITE_BASE_URL}/events`),
       },
       {
         path: "/event/:details",
         element: <EventDetails />,
         loader: ({ params }) =>
-          fetch(`https://shrl-server.vercel.app/event/${params.details}`),
+          fetch(`${import.meta.env.VITE_BASE_URL}/event/${params.details}`),
       },
       {
         path: "add-events",
@@ -54,14 +50,7 @@ const router = createBrowserRouter([
         path: "services",
         element: <Services />,
       },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      // {
-      //   path: "/register",
-      //   element: <Register />,
-      // },
+
       {
         path: "/add-upcoming-events",
         element: (
@@ -78,13 +67,15 @@ const router = createBrowserRouter([
       {
         path: "/upcoming-events",
         element: <UpcomingEvents />,
-        loader: () => fetch("https://shrl-server.vercel.app/upcoming-events"),
+        loader: () => fetch(`${import.meta.env.VITE_BASE_URL}/upcoming-events`),
       },
       {
         path: "/update-events/:id",
         element: <UpdateEvent />,
         loader: ({ params }) =>
-          fetch(`https://shrl-server.vercel.app/upcoming-events/${params.id}`),
+          fetch(
+            `${import.meta.env.VITE_BASE_URL}/upcoming-events/${params.id}`
+          ),
       },
       {
         path: "/contact",
@@ -98,8 +89,16 @@ const router = createBrowserRouter([
         path: "/member/:id",
         element: <MemberDetails />,
         loader: ({ params }) =>
-          fetch(`https://shrl-server.vercel.app/member/${params.id}`),
+          fetch(`${import.meta.env.VITE_BASE_URL}/member/${params.id}`),
       },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      // {
+      //   path: "/register",
+      //   element: <Register />,
+      // },
     ],
   },
 ]);

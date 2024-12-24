@@ -45,11 +45,11 @@ const EventCard = ({ event, events, setEvents }) => {
       <div
         className={`${
           darkMode && "bg-slate-800"
-        } card bg-base-100 object-cover object-center w-full border p-4`}
+        } card bg-base-100 object-cover object-center w-full border lg:p-4`}
       >
         <figure>
           <img
-            className=" rounded-lg  h-[600px] object-cover"
+            className=" rounded-lg  lg:h-[600px] object-cover"
             src={photo}
             alt={heading}
           />

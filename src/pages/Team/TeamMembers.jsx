@@ -1,39 +1,36 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import Loading from "../../components/Loading";
 import MembersCard from "./MembersCard";
+import HeadingAndTittle from "../../components/TextFormat/HeadingAndTittle";
 
 const TeamMembers = () => {
-  const [members, setMembers] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // State to track loading status
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["members"],
+    queryFn: async () => {
+      const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/members`);
+      return res.data;
+    },
+  });
 
-  useEffect(() => {
-    fetch("https://shrl-server.vercel.app/members")
-      .then((res) => res.json())
-      .then((data) => {
-        setMembers(data);
-        setIsLoading(false); // Stop loader when data is fetched
-      })
-      .catch((error) => {
-        console.error("Error fetching members:", error);
-        setIsLoading(false); // Stop loader even if there's an error
-      });
-  }, []);
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  // console.log(data);
 
   return (
     <div className="container mx-auto mb-12 lg:mb-14 px-2 lg:px-0">
-      {isLoading ? (
-        <div className="flex justify-center items-center mt-12">
-          {/* Loader (Can replace with a spinner component or custom loader) */}
-          <div >
-            <span className="loading loading-bars loading-lg"></span>
-          </div>
-        </div>
-      ) : (
-        <div className="grid md:grid-cols-2 2xl:grid-cols-3 mt-12 md:mt-0 gap-4">
-          {members?.map((member) => (
-            <MembersCard member={member} key={member._id} />
-          ))}
-        </div>
-      )}
+      <HeadingAndTittle heading={`Our Team Members`} />
+      <div className="grid md:grid-cols-2 2xl:grid-cols-3 mt-12 md:mt-0 gap-4">
+        {data?.map((member) => (
+          <MembersCard member={member} key={member._id} />
+        ))}
+      </div>
     </div>
   );
 };

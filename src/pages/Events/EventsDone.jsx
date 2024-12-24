@@ -1,37 +1,30 @@
 import { useContext, useState, useEffect } from "react";
-import { Link, useLoaderData } from "react-router"; // Import from react-router-dom instead of react-router
+import { Link, useLoaderData } from "react-router";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const EventsDone = () => {
   const { user } = useContext(AuthContext);
-  const loadedEvents = useLoaderData(); // Correct placement for loadedEvents
-  const [events, setEvents] = useState([]); // Initialize with an empty array
+  const loadedEvents = useLoaderData();
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    // Set the state once loadedEvents is available
     setEvents(loadedEvents);
-  }, [loadedEvents]); // Ensure that the state is updated whenever loadedEvents changes
+  }, [loadedEvents]);
 
   const handleDelete = (id) => {
-    console.log(id);
-    fetch(`https://shrl-server.vercel.app/event/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-
-        Swal.fire({
-          title: "Good job!",
-          text: "Successfully deleted this event!",
-          icon: "success",
-        });
-
-        // Filter the deleted event from the state
-        const dataFilter = events.filter((event) => event._id !== id);
-        setEvents(dataFilter);
+    axios.delete(`${import.meta.env.VITE_BASE_URL}/event/${id}`).then((res) => {
+      Swal.fire({
+        title: "Good job!",
+        text: "Successfully deleted this event!",
+        icon: "success",
       });
+
+      // Filter the deleted event from the state
+      const dataFilter = events.filter((event) => event._id !== id);
+      setEvents(dataFilter);
+    });
   };
 
   return (
