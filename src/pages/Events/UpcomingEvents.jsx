@@ -4,6 +4,7 @@ import EventCard from "./EventCard";
 
 import ScrollingText from "../../components/TextFormat/ScrollingText";
 import { Typewriter } from "react-simple-typewriter";
+import Loading from "../../components/Loading";
 
 const UpcomingEvents = () => {
   // State to manage events and loading status
@@ -15,11 +16,15 @@ const UpcomingEvents = () => {
 
   // Set the initial events on load
   useEffect(() => {
-    if (loaderData) {
+    if (Array.isArray(loaderData)) {
       setUpcomingEvents(loaderData);
-      setIsLoading(false); // Data has loaded, stop the loader
     }
+    setIsLoading(false); // Data has loaded, stop the loader
   }, [loaderData]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div>
@@ -37,11 +42,11 @@ const UpcomingEvents = () => {
 
       <ScrollingText />
 
-      {/* Loader */}
-      {isLoading ? (
-        <div className="flex justify-center items-center mt-12">
-          <div className="w-16 h-16 border-8 border-dashed border-primary rounded-full animate-spin"></div>
-        </div>
+      {/* Check if there are events */}
+      {upcomingEvents.length === 0 ? (
+        <p className="text-center text-gray-500 py-8">
+          No upcoming events found.
+        </p>
       ) : (
         <div className="grid gap-4 py-8 items-center justify-center px-2 lg:px-0">
           {upcomingEvents.map((event) => (
@@ -49,7 +54,7 @@ const UpcomingEvents = () => {
               key={event._id}
               event={event}
               events={upcomingEvents}
-              setEvents={setUpcomingEvents} // Pass down setEvents to EventCard
+              setEvents={setUpcomingEvents} // Ensure this is needed
             />
           ))}
         </div>
