@@ -5,7 +5,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 const HeroSection = () => {
     const {darkMode}= useContext(AuthContext)
   return (
-    <section className="bg-[#cdd9e8]  md:py-2">
+    <section className="bg-[#cdd9e8]  md:py-2 2xl:h-screen">
       <div className={`${darkMode && "text-black"} grid md:grid-cols-2 justify-between items-center xl:gap-8`}>
         <div className="mx-auto px-4 md:px-0 md:w-9/12 space-y-8 md:space-y-12">
           <h1></h1>

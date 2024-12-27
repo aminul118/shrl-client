@@ -28,7 +28,7 @@ const EventsDone = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto w-full mb-8 lg:mb-12 2xl:mb-16">
+    <div className="max-w-2xl mx-auto w-full mb-8 lg:mb-12 2xl:mb-16 pt-24">
       <div className="grid gap-6">
         {events.map((event) => (
           <div key={event._id}>

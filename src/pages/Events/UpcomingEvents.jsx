@@ -23,7 +23,7 @@ const UpcomingEvents = () => {
 
   return (
     <div>
-      <h1 className="text-4xl text-red-500 font-bold text-center py-4">
+      <h1 className="text-2xl lg:text-4xl text-red-500 font-bold text-center py-4 pt-24">
         <Typewriter
           words={["Upcoming Events"]}
           loop

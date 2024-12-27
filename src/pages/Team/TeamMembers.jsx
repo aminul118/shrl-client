@@ -24,7 +24,7 @@ const TeamMembers = () => {
   // console.log(data);
 
   return (
-    <div className="container mx-auto mb-12 lg:mb-14 px-2 lg:px-0">
+    <div className="container mx-auto mb-12 lg:mb-14 px-2 lg:px-0 py-24 lg:py-24">
       <HeadingAndTittle heading={`Our Team Members`} />
       <div className="grid md:grid-cols-2 2xl:grid-cols-3 mt-12 md:mt-0 gap-4">
         {data?.map((member) => (

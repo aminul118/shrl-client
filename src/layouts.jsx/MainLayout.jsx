@@ -20,7 +20,7 @@ const MainLayout = () => {
   return (
     <div data-theme={darkMode ? "dark" : "light"}>
       <Navbar />
-      <div className="min-h-[calc(100vh-464px)]  lg:px-0 ">
+      <div className="min-h-[calc(100vh-384px)]  lg:px-0 ">
         <Outlet />
       </div>
       <Footer />
