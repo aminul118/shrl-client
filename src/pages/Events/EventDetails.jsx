@@ -14,17 +14,23 @@ const EventDetails = () => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{heading}</h2>
-          <p>
-            <span className="font-semibold">Date:</span> {date}
-          </p>
-          <p>
-            <span className="font-semibold">Time:</span> {time}
-          </p>
-          <p>
-            <span className="font-semibold">Venue:</span> {venue}
-          </p>
-          <p>
-            <span className="font-semibold text-justify">Details:</span>{" "}
+          {date && (
+            <p>
+              <span className="font-semibold">Date:</span> {date}
+            </p>
+          )}
+          {time && (
+            <p>
+              <span className="font-semibold">Time:</span> {time}
+            </p>
+          )}
+          {venue && (
+            <p>
+              <span className="font-semibold">Venue:</span> {venue}
+            </p>
+          )}
+          <p className="text-justify">
+            <span className="font-semibold ">Details:</span>
             {details}
           </p>
         </div>

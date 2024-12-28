@@ -25,16 +25,18 @@ const AddEvents = () => {
     };
     // console.log(newEvent);
 
-    axios.post(`${import.meta.env.VITE_BASE_URL}/events`).then((res) => {
-      // console.log(res.data);
-      if (res.data.insertedId) {
-        Swal.fire({
-          title: "Good job!",
-          text: "New Event added!",
-          icon: "success",
-        });
-      }
-    });
+    axios
+      .post(`${import.meta.env.VITE_BASE_URL}/events`, newEvent)
+      .then((res) => {
+        // console.log(res.data);
+        if (res.data.insertedId) {
+          Swal.fire({
+            title: "Good job!",
+            text: "New Event added!",
+            icon: "success",
+          });
+        }
+      });
   };
   return (
     <div
@@ -73,7 +75,6 @@ const AddEvents = () => {
               name="date"
               placeholder="Events Date"
               className="input input-bordered"
-              required
             />
           </div>
           {/* Event Time */}
@@ -86,7 +87,6 @@ const AddEvents = () => {
               name="time"
               placeholder="Events Time"
               className="input input-bordered"
-              required
             />
           </div>
           {/* Venue */}
@@ -99,7 +99,6 @@ const AddEvents = () => {
               name="venue"
               placeholder="Venue"
               className="input input-bordered"
-              required
             />
           </div>
           {/* Facilitators */}
