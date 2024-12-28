@@ -24,7 +24,7 @@ const MemberDetails = () => {
   } = details;
 
   return (
-    <section className="container mx-auto mb-8">
+    <section className="container mx-auto mb-8 pt-24">
       <div data-aos="fade-left" data-aos-duration="500" className="text-center">
         {/* Photo Name and details start */}
         <img
