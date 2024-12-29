@@ -1,7 +1,8 @@
 import Swal from "sweetalert2";
 import HeadingAndTittle from "../../components/TextFormat/HeadingAndTittle";
-import { Helmet } from "react-helmet";
+
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const AddEvents = () => {
   const handleAddEvents = (e) => {

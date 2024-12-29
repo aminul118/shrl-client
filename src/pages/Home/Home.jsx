@@ -1,5 +1,5 @@
-import { Helmet } from "react-helmet";
 
+import { Helmet } from "react-helmet-async";
 import KeyServices from "../../shared/KeyServices/KeyServices";
 import FoundingTeam from "../../shared/FoundingTeam/FoundingTeam";
 import Contact from "../Contact/Contact";

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import KeyServices from "../../shared/KeyServices/KeyServices";
 import HeadingAndTittle from "../../components/TextFormat/HeadingAndTittle";
 import CommitmentsSection from "../../shared/CommitmentsSection/CommitmentsSection";
@@ -10,7 +10,7 @@ const Services = () => {
         <title>Services || SHRL</title>
       </Helmet>
       <KeyServices />
-      <CommitmentsSection/>
+      <CommitmentsSection />
     </div>
   );
 };

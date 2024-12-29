@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 import HeadingAndTittle from "./HeadingAndTittle";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import axios from "axios";
 
 const AddScrolling = () => {

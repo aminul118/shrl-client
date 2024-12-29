@@ -8,8 +8,8 @@ import {
 } from "react-router";
 
 import { toast } from "react-toastify";
-import { Helmet } from "react-helmet";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const [eye, setEye] = useState(false);

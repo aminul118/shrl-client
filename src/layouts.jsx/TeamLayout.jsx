@@ -1,5 +1,5 @@
 import TeamMembers from "../pages/Team/TeamMembers";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const TeamLayout = () => {
   return (
