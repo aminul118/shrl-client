@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router";
 
 const EventDetails = () => {
   const event = useLoaderData();
-  console.log(event);
+  // console.log(event);
 
   const { heading, date, time, venue, facilitators, photo, details } = event;
 

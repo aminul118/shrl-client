@@ -21,7 +21,7 @@ const ScrollingText = () => {
   }, []);
 
   const handleDelete = (id) => {
-    console.log("Deleting id:", id);
+    // console.log("Deleting id:", id);
     fetch(`https://shrl-server.vercel.app/scrolling/${id}`, {
       method: "DELETE",
     })

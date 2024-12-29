@@ -25,7 +25,7 @@ const Login = () => {
     const form = new FormData(e.target);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email, password);
+    // console.log(email, password);
     signInUser(email, password)
       .then((result) => {
         const user = result.user;
@@ -34,7 +34,7 @@ const Login = () => {
         });
         navigate(location.state ? location.state : "/");
 
-        console.log("Sign in user", user);
+        // console.log("Sign in user", user);
       })
       .catch((error) => {
         toast.error("Email or password is not correct");

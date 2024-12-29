@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 
 const UpdateEvent = () => {
   const event = useLoaderData();
-  console.log(event);
+  // console.log(event);
 
   const { heading, date, time, venue, facilitators, photo, _id } = event;
 
@@ -24,7 +24,7 @@ const UpdateEvent = () => {
       facilitators,
       photo,
     };
-    console.log(updateEvent);
+    // console.log(updateEvent);
 
     fetch(`https://shrl-server.vercel.app/upcoming-events/${_id}`, {
       method: "PUT",
@@ -35,7 +35,7 @@ const UpdateEvent = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Good job!",
